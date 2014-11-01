@@ -1,8 +1,8 @@
 // most of as3 is there
 public class LookAClass {
 	public function LookAClass() {
-		Util.print("in LookAClass's constructor");
-		Util.print(doStuff());
+		G.print("in LookAClass's constructor");
+		G.print(doStuff());
 	}
 	private function doStuff():String {
 		return "In private method.";
@@ -20,7 +20,7 @@ function check({value:v}):String {
 }
 function square(n) n*n;
 var [x,y,z] = [1,check(val),square(3.14)];
-Util.print(y+z);
+G.print(y+z);
 
 // access other objects. packages are namespaces. soylent green is people.
 namespace fu = "flash.utils"; use namespace fu; // think of this as "import flash.utils.*", except with fu.
@@ -28,7 +28,7 @@ var b:ByteArray = new ByteArray;
 var src:String = "BlahBlahBlahBlahBlahBlahBlah";
 b.writeUTFBytes(src);
 b.compress();
-Util.print(src.length + " => " +b.length);
+G.print(src.length + " => " +b.length);
 
 
 //=========================================================================================
@@ -40,12 +40,12 @@ function loop():String {
 	}
 	return s.substr(0,s.length-1)+"="+v;
 }
-Util.print(loop());
+G.print(loop());
 dynamic class dummy extends Array {
 	function dummy() {
 		this.push("World!");
 		this.unshift("Hello");
-		Util.print(this.join(", "));
+		G.print(this.join(", "));
 	}
 }
 new dummy;
