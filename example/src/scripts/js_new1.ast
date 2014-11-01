@@ -1,0 +1,18 @@
+namespace foo = "flash.utils"; use namespace foo;
+var sum:int=0;
+for(var i:int=0;i<100000;i++){
+	sum=sum+i;
+}
+G.print("-----------------------");
+G.print("累加结果：",sum);
+EvalTest.print("js 100000次累加总时间："+(getTimer()-EvalTest.now));
+G.print(G.a.b.say(),1,2,3,"abc");
+var tmp:AClass = new AClass();
+	tmp.say();
+class CClass extends AClass{
+	function CClass(){
+		G.print("I'm C");
+	}
+}
+var c:CClass = new CClass;
+c.b.say();

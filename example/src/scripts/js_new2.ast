@@ -1,0 +1,27 @@
+/*
+ * public 修饰符，不是必要的
+ * import 不支持，改用 namespace 和  use namespace
+ * 类型也不是必须的，函数返回类型也不是必须的
+ */
+namespace flash_utils = "flash.utils";	//声明
+use namespace flash_utils;				//使用
+
+namespace flash_geom = "flash.geom";	//声明
+use namespace flash_geom;				//使用
+
+dynamic class ArrayX extends Array{
+	function ArrayX(){
+		this.push("World!");
+		this.unshift("Hello");
+		this.push(" I'm ArrayX");
+		this.push(getTimer());
+	}
+	function say(){
+		G.print(this.join(", "),new Point(1.5,2.6),1,3,5,7,"abc",Math.PI);
+	}
+	var ver:Number = 1.01;
+}
+G.class_from_js = ArrayX;
+G.arr = new ArrayX();
+G.arr.push("☆in js☆");
+G.arr.say();
