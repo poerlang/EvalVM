@@ -1,7 +1,10 @@
 EvalVM
 ======
 
-一个Javascript、AS3脚本编译器，在FlashPlayer运行时，执行eval操作，脚本与AS3通信，类和变量互通。
+一个基于 AS3 的 JavaScript 脚本编译解释器，FlashPlayer运行时执行eval操作，脚本与AS3类、变量互通。
+输入的其实是 ecmascript 4 类型的脚本，输出的是二进制的编译文件。
+效率是原生的1/20左右，不过用来做游戏的脚本系统，足够了。
+虽然lua的效率接近原生（CrossBridge版本），但是，如果你和我一样喜欢 AS或JS的语法，可以考虑用这个 EvalVM。
 
 源自
 ==
@@ -19,4 +22,4 @@ function end():void{
 	trace("end");
 }
 </pre>
-详见 example 目录
+具体用法，详见 example 目录。
