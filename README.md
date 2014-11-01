@@ -10,9 +10,13 @@ EvalVM
 使用方法
 ==
 <pre>
-var vm:CompiledESC = new CompiledESC(function():void{
-				var b:ByteArray = vm.eval("var a=1;");
-				ByteLoader.loadBytes(b,end,true);
-			});
+var vm:CompiledESC = new CompiledESC(vmReady);
+function vmReady():void{
+	var b:ByteArray = vm.eval("var a=1;");
+	ByteLoader.loadBytes(b,end,true);
+}
+function end():void{
+	trace("end");
+}
 </pre>
-//详见example目录
+详见 example 目录
